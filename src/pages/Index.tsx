@@ -6,427 +6,462 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
+      <header className="border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Icon name="Cube" size={32} className="text-slate-700" />
-              <h1 className="text-2xl font-bold text-slate-900">InteriorViz</h1>
+              <Icon name="Palette" className="h-8 w-8 text-primary" />
+              <h1 className="text-2xl font-bold text-foreground">
+                DesignStudio
+              </h1>
             </div>
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex items-center space-x-6">
               <a
-                href="#home"
-                className="text-slate-600 hover:text-slate-900 transition-colors"
+                href="#about"
+                className="text-foreground/80 hover:text-primary transition-colors"
               >
-                Главная
+                О нас
+              </a>
+              <a
+                href="#portfolio"
+                className="text-foreground/80 hover:text-primary transition-colors"
+              >
+                Портфолио
               </a>
               <a
                 href="#services"
-                className="text-slate-600 hover:text-slate-900 transition-colors"
+                className="text-foreground/80 hover:text-primary transition-colors"
               >
                 Услуги
               </a>
               <a
                 href="#pricing"
-                className="text-slate-600 hover:text-slate-900 transition-colors"
+                className="text-foreground/80 hover:text-primary transition-colors"
               >
                 Цены
               </a>
               <a
-                href="#contacts"
-                className="text-slate-600 hover:text-slate-900 transition-colors"
+                href="#contact"
+                className="text-foreground/80 hover:text-primary transition-colors"
               >
                 Контакты
               </a>
             </nav>
-            <Button>Заказать проект</Button>
+            <Button>
+              <Icon name="Phone" className="h-4 w-4 mr-2" />
+              Заказать звонок
+            </Button>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section
-        id="home"
-        className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-20"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-5xl font-bold mb-6 leading-tight">
-                Профессиональная 3D-визуализация интерьеров
-              </h2>
-              <p className="text-xl mb-8 text-slate-300">
-                Создаём фотореалистичные изображения ваших будущих интерьеров.
-                Посмотрите, как будет выглядеть ваша квартира до начала ремонта.
-              </p>
-              <div className="flex space-x-4">
-                <Button
-                  size="lg"
-                  className="bg-white text-slate-900 hover:bg-slate-100"
-                >
-                  Посмотреть портфолио
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white hover:text-slate-900"
-                >
-                  Узнать цены
-                </Button>
-              </div>
+      <section className="py-20 bg-gradient-to-br from-background to-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <Badge className="mb-4" variant="outline">
+              <Icon name="Sparkles" className="h-3 w-3 mr-1" />
+              Премиальный дизайн интерьера
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+              Создаём пространства
+              <span className="block text-primary">вашей мечты</span>
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Профессиональный дизайн интерьера и 3D-визуализация. Превращаем
+              ваши идеи в реальность с помощью современных технологий и
+              безупречного вкуса.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="text-lg px-8 py-6">
+                <Icon name="Palette" className="h-5 w-5 mr-2" />
+                Начать проект
+              </Button>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6">
+                <Icon name="Play" className="h-5 w-5 mr-2" />
+                Смотреть работы
+              </Button>
             </div>
-            <div className="relative">
-              <img
-                src="/img/29e55fa0-f1cd-4ebf-ba5a-4ab17ad88497.jpg"
-                alt="3D визуализация гостиной"
-                className="rounded-lg shadow-2xl"
-              />
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Почему выбирают нас?
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              <div className="text-center">
+                <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Icon name="Award" className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Экспертность</h3>
+                <p className="text-muted-foreground">
+                  Более 8 лет опыта в создании уникальных интерьеров
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Icon name="Zap" className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Технологии</h3>
+                <p className="text-muted-foreground">
+                  Используем передовые 3D-технологии и программы
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Icon name="Heart" className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Индивидуальность</h3>
+                <p className="text-muted-foreground">
+                  Каждый проект создаём с учётом ваших пожеланий
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+      <section id="portfolio" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Наши работы
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Каждый проект — это уникальное решение, созданное с учётом ваших
-              пожеланий и особенностей помещения
+            <p className="text-xl text-muted-foreground">
+              Портфолио реализованных проектов
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <img
-                src="/img/29e55fa0-f1cd-4ebf-ba5a-4ab17ad88497.jpg"
-                alt="Гостиная"
-                className="w-full h-48 object-cover"
-              />
-              <CardHeader>
-                <CardTitle>Современная гостиная</CardTitle>
-                <CardDescription>
-                  Минималистичный дизайн с акцентом на комфорт
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <img
-                src="/img/d201eaaf-8073-45ed-86a5-abbf183df2a1.jpg"
-                alt="Кухня"
-                className="w-full h-48 object-cover"
-              />
-              <CardHeader>
-                <CardTitle>Кухня премиум-класса</CardTitle>
-                <CardDescription>
-                  Элегантность и функциональность
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <img
-                src="/img/9cef275b-d5a5-4dba-9f77-ad595a2a98d7.jpg"
-                alt="Спальня"
-                className="w-full h-48 object-cover"
-              />
-              <CardHeader>
-                <CardTitle>Спальня в стиле лофт</CardTitle>
-                <CardDescription>Уют и стиль в каждой детали</CardDescription>
-              </CardHeader>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Современная гостиная",
+                category: "Жилой интерьер",
+                image: "/img/bd339ab2-616c-4a9a-8362-16f1ec89bef8.jpg",
+              },
+              {
+                title: "Минималистичная кухня",
+                category: "Кухня",
+                image: "/img/6eea91d0-fb21-4a6a-851f-ad40d443416b.jpg",
+              },
+              {
+                title: "Спальня в скандинавском стиле",
+                category: "Спальня",
+                image: "/img/98bfa8b2-b123-4238-b176-50045de389cc.jpg",
+              },
+              {
+                title: "Офисное пространство",
+                category: "Коммерческий дизайн",
+                image: "/img/bd339ab2-616c-4a9a-8362-16f1ec89bef8.jpg",
+              },
+              {
+                title: "Детская комната",
+                category: "Детский интерьер",
+                image: "/img/98bfa8b2-b123-4238-b176-50045de389cc.jpg",
+              },
+              {
+                title: "Ванная комната",
+                category: "Санузел",
+                image: "/img/6eea91d0-fb21-4a6a-851f-ad40d443416b.jpg",
+              },
+            ].map((project, index) => (
+              <Card
+                key={index}
+                className="overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <div className="relative h-48 bg-muted">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <Badge variant="secondary">{project.category}</Badge>
+                  </div>
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-lg">{project.title}</CardTitle>
+                </CardHeader>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Услуги</h2>
-            <p className="text-xl text-slate-600">
-              Профессиональная 3D-визуализация интерьеров квартир
+      <section id="services" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Наши услуги
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Полный спектр услуг по дизайну интерьера
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow">
-              <div className="mb-4">
-                <Icon
-                  name="Home"
-                  size={48}
-                  className="text-slate-700 mx-auto"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Визуализация гостиной</CardTitle>
-                <CardDescription>
-                  Создаём фотореалистичные изображения вашей будущей гостиной с
-                  детальной проработкой каждого элемента
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow">
-              <div className="mb-4">
-                <Icon
-                  name="ChefHat"
-                  size={48}
-                  className="text-slate-700 mx-auto"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Визуализация кухни</CardTitle>
-                <CardDescription>
-                  Показываем, как будет выглядеть ваша кухня с выбранной мебелью
-                  и техникой
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="text-center p-8 hover:shadow-lg transition-shadow">
-              <div className="mb-4">
-                <Icon name="Bed" size={48} className="text-slate-700 mx-auto" />
-              </div>
-              <CardHeader>
-                <CardTitle>Визуализация спальни</CardTitle>
-                <CardDescription>
-                  Создаём атмосферу уюта и комфорта в вашей будущей спальне
-                </CardDescription>
-              </CardHeader>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: "Home",
+                title: "Дизайн-проект",
+                description:
+                  "Полный дизайн-проект с чертежами, планировками и спецификациями",
+              },
+              {
+                icon: "Monitor",
+                title: "3D-визуализация",
+                description: "Фотореалистичная 3D-визуализация всех помещений",
+              },
+              {
+                icon: "Palette",
+                title: "Подбор материалов",
+                description: "Помощь в выборе отделочных материалов и мебели",
+              },
+              {
+                icon: "Users",
+                title: "Авторский надзор",
+                description: "Сопровождение проекта на всех этапах реализации",
+              },
+              {
+                icon: "Lightbulb",
+                title: "Светодизайн",
+                description:
+                  "Профессиональное освещение для создания атмосферы",
+              },
+              {
+                icon: "Sofa",
+                title: "Декорирование",
+                description:
+                  "Подбор декора и аксессуаров для завершения образа",
+              },
+            ].map((service, index) => (
+              <Card
+                key={index}
+                className="text-center hover:shadow-lg transition-shadow"
+              >
+                <CardHeader>
+                  <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <Icon
+                      name={service.icon as any}
+                      className="h-8 w-8 text-primary"
+                    />
+                  </div>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-4">Цены</h2>
-            <p className="text-xl text-slate-600">
+      <section id="pricing" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Тарифы
+            </h2>
+            <p className="text-xl text-muted-foreground">
               Выберите подходящий пакет услуг
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-8 hover:shadow-lg transition-shadow">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Базовый</CardTitle>
-                <div className="text-4xl font-bold text-slate-900 mt-4">
-                  ₽15,000
-                </div>
-                <CardDescription>за комнату</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-slate-600">
-                  <li className="flex items-center">
-                    <Icon
-                      name="Check"
-                      size={16}
-                      className="text-green-600 mr-2"
-                    />
-                    2 ракурса
-                  </li>
-                  <li className="flex items-center">
-                    <Icon
-                      name="Check"
-                      size={16}
-                      className="text-green-600 mr-2"
-                    />
-                    Базовое освещение
-                  </li>
-                  <li className="flex items-center">
-                    <Icon
-                      name="Check"
-                      size={16}
-                      className="text-green-600 mr-2"
-                    />
-                    Срок 5-7 дней
-                  </li>
-                </ul>
-                <Button className="w-full mt-6" variant="outline">
-                  Заказать
-                </Button>
-              </CardContent>
-            </Card>
-            <Card className="p-8 border-2 border-slate-900 hover:shadow-lg transition-shadow relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white px-4 py-1 rounded-full text-sm">
-                Популярный
-              </div>
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Стандартный</CardTitle>
-                <div className="text-4xl font-bold text-slate-900 mt-4">
-                  ₽25,000
-                </div>
-                <CardDescription>за комнату</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-slate-600">
-                  <li className="flex items-center">
-                    <Icon
-                      name="Check"
-                      size={16}
-                      className="text-green-600 mr-2"
-                    />
-                    4 ракурса
-                  </li>
-                  <li className="flex items-center">
-                    <Icon
-                      name="Check"
-                      size={16}
-                      className="text-green-600 mr-2"
-                    />
-                    Реалистичное освещение
-                  </li>
-                  <li className="flex items-center">
-                    <Icon
-                      name="Check"
-                      size={16}
-                      className="text-green-600 mr-2"
-                    />
-                    Детализация текстур
-                  </li>
-                  <li className="flex items-center">
-                    <Icon
-                      name="Check"
-                      size={16}
-                      className="text-green-600 mr-2"
-                    />
-                    Срок 3-5 дней
-                  </li>
-                </ul>
-                <Button className="w-full mt-6">Заказать</Button>
-              </CardContent>
-            </Card>
-            <Card className="p-8 hover:shadow-lg transition-shadow">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Премиум</CardTitle>
-                <div className="text-4xl font-bold text-slate-900 mt-4">
-                  ₽40,000
-                </div>
-                <CardDescription>за комнату</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-slate-600">
-                  <li className="flex items-center">
-                    <Icon
-                      name="Check"
-                      size={16}
-                      className="text-green-600 mr-2"
-                    />
-                    6 ракурсов
-                  </li>
-                  <li className="flex items-center">
-                    <Icon
-                      name="Check"
-                      size={16}
-                      className="text-green-600 mr-2"
-                    />
-                    Студийное освещение
-                  </li>
-                  <li className="flex items-center">
-                    <Icon
-                      name="Check"
-                      size={16}
-                      className="text-green-600 mr-2"
-                    />
-                    Максимальная детализация
-                  </li>
-                  <li className="flex items-center">
-                    <Icon
-                      name="Check"
-                      size={16}
-                      className="text-green-600 mr-2"
-                    />
-                    Панорамный вид 360°
-                  </li>
-                  <li className="flex items-center">
-                    <Icon
-                      name="Check"
-                      size={16}
-                      className="text-green-600 mr-2"
-                    />
-                    Срок 2-3 дня
-                  </li>
-                </ul>
-                <Button className="w-full mt-6" variant="outline">
-                  Заказать
-                </Button>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                title: "Базовый",
+                price: "2 500",
+                unit: "за м²",
+                description: "Планировочное решение и базовая визуализация",
+                features: [
+                  "Планировка помещения",
+                  "2 варианта дизайна",
+                  "Базовая 3D-визуализация",
+                  "Консультация дизайнера",
+                ],
+                popular: false,
+              },
+              {
+                title: "Стандарт",
+                price: "3 500",
+                unit: "за м²",
+                description: "Полный дизайн-проект с детальной проработкой",
+                features: [
+                  "Планировка и зонирование",
+                  "Дизайн-концепция",
+                  "Детальная 3D-визуализация",
+                  "Чертежи и спецификации",
+                  "Подбор материалов",
+                ],
+                popular: true,
+              },
+              {
+                title: "Премиум",
+                price: "5 000",
+                unit: "за м²",
+                description: "VIP-сервис с авторским надзором",
+                features: [
+                  "Всё из пакета Стандарт",
+                  "Авторский надзор",
+                  "Индивидуальный подбор мебели",
+                  "Декорирование",
+                  "Приоритетная поддержка",
+                ],
+                popular: false,
+              },
+            ].map((plan, index) => (
+              <Card
+                key={index}
+                className={`text-center ${plan.popular ? "border-primary shadow-lg scale-105" : ""}`}
+              >
+                {plan.popular && (
+                  <div className="bg-primary text-primary-foreground px-3 py-1 text-sm rounded-full absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    Популярный
+                  </div>
+                )}
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-2xl">{plan.title}</CardTitle>
+                  <div className="mt-4">
+                    <span className="text-4xl font-bold text-foreground">
+                      {plan.price}
+                    </span>
+                    <span className="text-muted-foreground ml-2">
+                      {plan.unit}
+                    </span>
+                  </div>
+                  <CardDescription className="mt-2">
+                    {plan.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 mb-6">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li
+                        key={featureIndex}
+                        className="flex items-center text-sm"
+                      >
+                        <Icon
+                          name="Check"
+                          className="h-4 w-4 text-primary mr-2"
+                        />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button
+                    className="w-full"
+                    variant={plan.popular ? "default" : "outline"}
+                  >
+                    Выбрать тариф
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Contacts Section */}
-      <section id="contacts" className="py-20 bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Контакты</h2>
-            <p className="text-xl text-slate-300">Готовы обсудить ваш проект</p>
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Контакты
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Свяжитесь с нами для обсуждения проекта
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="bg-slate-800 border-slate-700 text-white">
-              <CardContent className="p-8 text-center">
-                <Icon
-                  name="Phone"
-                  size={48}
-                  className="text-slate-300 mx-auto mb-4"
-                />
-                <h3 className="text-xl font-semibold mb-2">Телефон</h3>
-                <p className="text-slate-300">+7 (999) 123-45-67</p>
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            <div>
+              <h3 className="text-2xl font-semibold mb-6">Наши контакты</h3>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <Icon name="Phone" className="h-5 w-5 text-primary mr-3" />
+                  <span>+7 (495) 123-45-67</span>
+                </div>
+                <div className="flex items-center">
+                  <Icon name="Mail" className="h-5 w-5 text-primary mr-3" />
+                  <span>info@designstudio.ru</span>
+                </div>
+                <div className="flex items-center">
+                  <Icon name="MapPin" className="h-5 w-5 text-primary mr-3" />
+                  <span>г. Москва, ул. Тверская, 15</span>
+                </div>
+                <div className="flex items-center">
+                  <Icon name="Clock" className="h-5 w-5 text-primary mr-3" />
+                  <span>Пн-Пт: 10:00-19:00</span>
+                </div>
+              </div>
+            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>Оставьте заявку</CardTitle>
+                <CardDescription>
+                  Мы свяжемся с вами в ближайшее время
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form className="space-y-4">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Ваше имя"
+                      className="w-full p-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="tel"
+                      placeholder="Телефон"
+                      className="w-full p-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                  <div>
+                    <textarea
+                      placeholder="Опишите ваш проект"
+                      rows={4}
+                      className="w-full p-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                  <Button type="submit" className="w-full">
+                    Отправить заявку
+                  </Button>
+                </form>
               </CardContent>
             </Card>
-            <Card className="bg-slate-800 border-slate-700 text-white">
-              <CardContent className="p-8 text-center">
-                <Icon
-                  name="Mail"
-                  size={48}
-                  className="text-slate-300 mx-auto mb-4"
-                />
-                <h3 className="text-xl font-semibold mb-2">Email</h3>
-                <p className="text-slate-300">info@interiorviz.ru</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-slate-800 border-slate-700 text-white">
-              <CardContent className="p-8 text-center">
-                <Icon
-                  name="MapPin"
-                  size={48}
-                  className="text-slate-300 mx-auto mb-4"
-                />
-                <h3 className="text-xl font-semibold mb-2">Адрес</h3>
-                <p className="text-slate-300">
-                  г. Москва, ул. Дизайнерская, 15
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-          <div className="text-center mt-12">
-            <Button
-              size="lg"
-              className="bg-white text-slate-900 hover:bg-slate-100"
-            >
-              Заказать консультацию
-            </Button>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-950 text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <Icon name="Cube" size={24} className="text-slate-400" />
-            <span className="text-lg font-semibold">InteriorViz</span>
+      <footer className="bg-primary text-primary-foreground py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+              <Icon name="Palette" className="h-6 w-6" />
+              <span className="text-xl font-bold">DesignStudio</span>
+            </div>
+            <div className="flex items-center space-x-4">
+              <span className="text-sm">
+                © 2024 DesignStudio. Все права защищены.
+              </span>
+            </div>
           </div>
-          <p className="text-slate-400">
-            &copy; 2024 InteriorViz. Все права защищены.
-          </p>
         </div>
       </footer>
     </div>
